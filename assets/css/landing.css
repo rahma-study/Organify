@@ -1,0 +1,580 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+/* ==========================
+   GLOBAL STYLE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #f3f5f2;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+    url("../img/welcome.jpg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 0 20px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero h1 {
+  font-size: 5rem;
+  z-index: 2;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  z-index: 2;
+  max-width: 600px;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  font-family: "Mingzat", sans-serif;
+  line-height: 1.6;
+}
+
+.user-logo {
+  position: absolute;
+  width: 50px; /* ukuran logo */
+  height: 50px;
+  top: 20px; /* jarak dari atas hero */
+  right: 30px; /* jarak dari kanan */
+  border-radius: 50%; /* biar bulat */
+  object-fit: cover; /* agar proporsional */
+  cursor: pointer; /* opsional, biar terlihat klikable */
+  z-index: 10; /* biar di atas elemen lain */
+}
+
+/* ==========================
+   SEARCH BOX
+========================== */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -40px;
+  position: relative;
+  z-index: 10;
+  gap: 0;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.search-box button {
+  background-color: #0a3d1e; /* primary dark green */
+  color: white;
+  border: none;
+  padding: 14.5px 30px;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-left: -1px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #146c35; /* secondary green */
+}
+
+.search-box button:active {
+  background-color: #084a21; /* deep pressed */
+  transform: scale(0.97);
+}
+
+/* ==========================
+   RESPONSIVE STYLE
+========================== */
+@media (max-width: 768px) {
+  .search-box {
+    flex-direction: row;
+    max-width: 90%;
+    margin-top: -20px;
+  }
+
+  .search-wrapper input {
+    padding: 12px 15px 12px 40px;
+    font-size: 0.95rem;
+  }
+
+  .search-box button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    border-radius: 0 40px 40px 0;
+    margin-left: 0;
+  }
+}
+
+/* Untuk HP kecil (≤480px) */
+@media (max-width: 480px) {
+  .search-box {
+    flex-direction: column;
+    max-width: 95%;
+    gap: 10px;
+  }
+
+  .search-wrapper input {
+    border-radius: 40px;
+    padding: 12px 15px 12px 40px;
+  }
+
+  .search-box button {
+    width: 100%;
+    border-radius: 40px;
+    padding: 12px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================
+   MAP
+========================== */
+.map-container {
+  margin-left: 30px; /* jarak kiri */
+  margin-right: 30px; /* jarak kanan */
+  padding: 30px; /* jarak atas, kiri, kanan */
+  margin-bottom: -20px; /* jarak bawah peta ke elemen berikutnya */
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 15px; /* opsional biar rapi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* opsional biar menonjol */
+}
+
+/* ==========================
+   BUTTON SETOR
+========================== */
+.btn-setor {
+  display: flex; /* Flex supaya icon & teks sejajar */
+  align-items: center; /* Vertikal center */
+  justify-content: center; /* Tengah horizontal */
+  gap: 10px; /* Jarak antara icon & teks */
+  width: 90%;
+  margin: 0 auto 30px auto;
+  background-color: #0a3d1e;
+  color: white;
+  padding: 18px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-setor:hover {
+  background-color: #146c35;
+  transform: translateY(-2px);
+}
+
+/* Icon di dalam tombol */
+.btn-setor img {
+  width: 24px; /* Sesuaikan ukuran ikon */
+  height: 24px;
+}
+
+/* ==========================
+   STATISTIK
+========================== */
+.stats {
+  background: white;
+  width: 90%;
+  margin: 0 auto 25px;
+  padding: 25px;
+  border-radius: 22px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.stats h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #0a3d1e; /* konsisten primary */
+  text-align: left;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.stat-bank {
+  color: #0a3d1e;  
+}
+
+.stat-berat {
+  color: #1553a3; 
+}
+
+
+/* ==========================
+   AKTIVITAS TERBARU
+========================== */
+.activity {
+  background: white;
+  width: 90%;
+  margin: 0 auto 25px;
+  padding: 25px;
+  border-radius: 22px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.activity h3 {
+  color: #0a3d1e; /* primary green */
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Ikon daur ulang */
+.activity-icon {
+  width: 42px;
+  height: 42px;
+  background: #e6f6ed; /* soft green supaya match card lain */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.activity-info b {
+  display: block;
+  color: #2e2e2e;
+  font-weight: 500;
+}
+
+.activity-info small {
+  color: #7a7a7a;
+  font-size: 0.85rem;
+}
+
+.point {
+  font-weight: 500;
+  color: #146c35; /* lebih fresh dan match hover-green */
+}
+
+.lihat-semua {
+  text-align: right;
+  color: #146c35; /* selaras everything */
+  font-size: 0.85rem;
+  margin-top: 12px;
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lihat-semua:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================
+   REWARD
+========================== */
+.reward {
+  background: linear-gradient(to right, #1c8f4a, #0a3d1e);
+  color: white;
+  border-radius: 20px;
+  width: 90%;
+  margin: 20px auto 30px;  /* tambah jarak atas */
+  padding: 28px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+/* Tombol Tukar Poin */
+.tukar-poin-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba(255, 255, 255, 0.22);
+  padding: 8px 16px;
+  border-radius: 30px;
+
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  backdrop-filter: blur(4px);
+  transition: 0.25s ease;
+}
+.tukar-poin-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.tukar-poin-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+
+/* Judul */
+.reward h4 {
+  margin-bottom: 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* Container isi */
+.reward-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.14);  /* bg transparan */
+  padding: 18px 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(3px);
+}
+
+/* Item */
+.reward-content div {
+  text-align: center;
+  flex: 1;
+}
+
+.reward-content h2 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-bottom: 4px;
+}
+
+/* ----------- TUTORIAL BARU ----------- */
+
+.tutorial {
+  text-align: center;
+  padding: 40px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tutorial h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #124d25;
+}
+
+.tutorial small {
+  display: block;
+  margin-bottom: 25px;
+  color: #7a7a7a;
+  font-size: 0.95rem;
+}
+
+/* Grid */
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Card */
+.tutorial-card {
+  width: 100%;
+  max-width: 240px;
+  height: 300px; /* <-- Tinggi seragam */
+  padding: 25px 20px;
+  border-radius: 22px;
+  background: #ffffff;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* rapikan layout */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Badge nomor */
+.badge {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  background: #146c35;
+  color: white;
+  font-weight: bold;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* Gambar */
+.tuto-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+/* Judul */
+.tutorial-card h3 {
+  margin: 5px 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Deskripsi */
+.tutorial-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.tutorial-card:hover .tuto-img {
+  transform: scale(1.03);
+}
+
+.step-card {
+  background: #e6f6ed;   /* putih + hijau lembut */
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-1, .card-2, .card-3, .card-4 {
+  background: linear-gradient(180deg, #e8f7ef, #ffffff);
+}
+
+.tutorial h2,
+.stats h3,
+.activity h3 {
+  color: #0a3d1e;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tutorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tutorial-card {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .tutorial-card {
+    max-width: 300px;
+    height: auto; /* agar fleksibel di layar kecil */
+    padding: 25px;
+  }
+}
