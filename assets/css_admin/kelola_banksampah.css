@@ -1,0 +1,382 @@
+/* --- GLOBAL STYLE --- */
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #032104;
+  overflow-x: hidden;
+}
+html,
+body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+.status-indicator {
+  width: 110px;
+  height: 35px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid;
+}
+
+/* ONLINE */
+.status-indicator.online {
+  background: #e1efe0;       /* hijau muda */
+  border-color: #16a34a;     /* hijau */
+  color: #16a34a;
+}
+
+/* OFFLINE */
+.status-indicator.offline {
+  background: #f3f3f3;       /* abu muda */
+  border-color: #9ca3af;     /* abu */
+  color: #6b7280;
+}
+
+.profile-icon img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- GREETING --- */
+.greeting {
+  margin: 20px 50px 20px;
+}
+
+.greeting h1 {
+  font-size: 35px;
+  font-weight: 500;
+  color: #000;
+}
+
+.greeting p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* --- MENU --- */
+.menu {
+  display: flex;
+  gap: 20px; /* dikurangi */
+  flex-wrap: wrap;
+  margin: 15px 50px; /* margin diperkecil */
+}
+
+.menu button {
+  background: #f4f4f4;
+  border: none;
+  border-radius: 25px; /* lebih kecil */
+  padding: 5px 20px; /* lebih ramping */
+  font-size: 15px; /* teks lebih kecil */
+  cursor: pointer;
+  color: #032104;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.menu button.active {
+  background: #e1efe0;
+  border: 1px solid #16a34a;
+  color: #032104;
+}
+
+.menu button:hover {
+  background: #e1efe0;
+  transform: translateY(-2px);
+}
+
+/* --- Tombol Tambah Bank Sampah --- */
+.stats-header {
+  display: flex;
+  justify-content: flex-end; /* tombol di kanan atas */
+  margin: 20px 50px 10px;
+}
+
+.btn-add {
+  background: #16a34a;
+  color: #fff;
+  margin-bottom: 5px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-add:hover {
+  background: #138439;
+}
+
+/* --- GRID 2 KOLOM --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 0 50px 50px;
+}
+
+/* Status pojok kanan atas card */
+.status-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #16a34a;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Icon di tombol */
+.btn-edit i,
+.btn-hapus i,
+.btn-add i {
+  margin-right: 6px;
+}
+
+/* --- CARD --- */
+.card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #032104;
+  margin-bottom: 12px; /* jarak bawah dari h2 ke p berikutnya */
+}
+
+.card p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 8px; /* jarak antar paragraf */
+  line-height: 1.8; /* jarak antar baris di dalam paragraf */
+}
+
+/* --- STATUS TAG (AKTIF / NONAKTIF) --- */
+.status-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status-active {
+  background-color: #dcfce7; /* hijau muda */
+  color: #2d7749; /* hijau gelap */
+}
+
+.status-nonaktif {
+  background-color: #fee2e2; /* merah muda */
+  color: #b91c1c; /* merah gelap */
+}
+
+
+/* Tombol Edit/Hapus dalam card */
+.card-btns {
+  display: flex;
+  gap: 15px; /* jarak antar tombol */
+  margin-top: 15px;
+}
+
+.btn-edit,
+.btn-hapus {
+  display: inline-block;
+  padding: 5px 97px;
+  font-size: 13px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 3px;
+  color: #fff;
+  transition: all 0.3s ease; /* tambahkan transisi */
+}
+
+.btn-edit {
+  background: #16a34a;
+}
+.btn-edit:hover {
+  background: #13833c; /* warna lebih gelap saat hover */
+}
+
+.btn-hapus {
+  background: #dc2626;
+}
+.btn-hapus:hover {
+  background: #b91c1c; /* warna lebih gelap saat hover */
+}
+
+/* Empty message */
+.empty-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .greeting {
+    margin: 40px 30px 15px;
+  }
+
+  .greeting h1 {
+    font-size: 38px;
+  }
+
+  .greeting p {
+    font-size: 18px;
+  }
+
+  .menu {
+    margin: 25px 25px;
+    justify-content: center;
+  }
+
+  /* tetap 2 kolom */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 30px 30px;
+  }
+
+  .stats-header {
+    justify-content: flex-end; /* tetap kanan */
+    margin: 20px 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr; /* 1 kolom untuk tablet kecil */
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .greeting h1 {
+    font-size: 30px;
+  }
+
+  .greeting p {
+    font-size: 15px;
+  }
+
+  .menu {
+    gap: 12px;              /* lebih rapat */
+    margin: 20px 20px;       /* margin kecil */
+    justify-content: center;
+  }
+
+  .menu button {
+    padding: 4px 14px;      /* tombol lebih kecil */
+    font-size: 13px;        /* teks lebih kecil */
+    border-radius: 20px;    /* rounded mengecil */
+  }
+
+  .stats-header {
+    justify-content: flex-end; /* tetap kanan */
+    margin: 15px 25px 10px;
+  }
+
+  .btn-add {
+    width: auto; /* tidak melebar full */
+  }
+
+  .card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .greeting {
+    margin: 30px 20px 10px;
+  }
+
+  .greeting h1 {
+    font-size: 28px;
+  }
+
+  .menu button {
+    width: 100%;
+  }
+
+  .stats-header {
+    justify-content: flex-end; /* tetap kanan */
+    margin: 10px 20px 10px;
+  }
+
+  .btn-add {
+    width: auto; /* tetap ukuran tombol normal */
+    padding: 6px 14px; /* kecilkan sedikit untuk mobile */
+  }
+
+  .card {
+    padding: 16px;
+  }
+}

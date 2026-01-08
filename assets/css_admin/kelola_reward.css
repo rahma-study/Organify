@@ -1,0 +1,509 @@
+/* --- GLOBAL STYLE --- */
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #032104;
+  overflow-x: hidden;
+}
+html,
+body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+.status-indicator {
+  width: 110px;
+  height: 35px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid;
+}
+
+/* ONLINE */
+.status-indicator.online {
+  background: #e1efe0;       /* hijau muda */
+  border-color: #16a34a;     /* hijau */
+  color: #16a34a;
+}
+
+/* OFFLINE */
+.status-indicator.offline {
+  background: #f3f3f3;       /* abu muda */
+  border-color: #9ca3af;     /* abu */
+  color: #6b7280;
+}
+
+.profile-icon img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- GREETING --- */
+.greeting {
+  margin: 20px 50px 20px;
+}
+
+.greeting h1 {
+  font-size: 35px;
+  font-weight: 500;
+  color: #000;
+}
+
+.greeting p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* --- MENU --- */
+.menu {
+  display: flex;
+  gap: 20px; /* dikurangi */
+  flex-wrap: wrap;
+  margin: 15px 50px; /* margin diperkecil */
+}
+
+.menu button {
+  background: #f4f4f4;
+  border: none;
+  border-radius: 25px; /* lebih kecil */
+  padding: 5px 20px; /* lebih ramping */
+  font-size: 15px; /* teks lebih kecil */
+  cursor: pointer;
+  color: #032104;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.menu button.active {
+  background: #e1efe0;
+  border: 1px solid #16a34a;
+  color: #032104;
+}
+
+.menu button:hover {
+  background: #e1efe0;
+  transform: translateY(-2px);
+}
+/* --- STATS --- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin: 30px 40px;
+}
+
+.stat {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.stat img {
+  position: absolute;
+  right: 18px;
+  bottom: 25px;
+  width: 30px;
+}
+
+/* --- FILTER BOX --- */
+.filter {
+  margin: 20px 40px;
+  padding: 25px 30px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.filter-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #f3f4f6;
+  cursor: pointer;
+}
+
+.filter-buttons button.active {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-add {
+  background: #16a34a;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 35px;
+  font-size: 12px;
+}
+
+/* --- TABLE CARD --- */
+.table-card {
+  margin: 20px 40px 60px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table-card h3 {
+  font-weight: 500;
+}
+
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-card th {
+  text-align: left;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* LEBAR KOLOM (PENTING) */
+.table-card th:nth-child(1) { width: 28%; } /* Reward */
+.table-card th:nth-child(2) { width: 14%; } /* Kategori */
+.table-card th:nth-child(3) { width: 10%; } /* Poin */
+.table-card th:nth-child(4) { width: 10%; } /* Stok */
+.table-card th:nth-child(5) { width: 10%; } /* Ditukar */
+.table-card th:nth-child(6) { width: 12%; } /* Status */
+.table-card th:nth-child(7) { width: 16%; } /* Aksi */
+.table-card td {
+  padding: 14px 0;
+  vertical-align: middle;
+}
+
+/* --- FIXED: Reward cell rapi horizontal --- */
+.reward-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reward-cell img {
+  width: 80px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.reward-cell span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.table-card td {
+font-size: 14px;
+}
+
+/* TAG warna */
+.tag.e { background: #1d4ed8; } 
+.tag.v { background: #7e22ce; } 
+.tag.g { background: #059669; } 
+
+.tag {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 10px;
+}
+
+/* STATUS */
+.status.active {
+  background: #eaffea;
+  color: #1e8a31;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* --- FIXED: Tombol Edit & Hapus --- */
+.aksi a {
+  text-decoration: none;
+  font-size: 10px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-edit {
+  background: #16a34a;
+}
+
+.btn-hapus {
+  background: #dc2626;
+}
+
+/* --- RESPONSIVE (DASHBOARD ASLI) --- */
+
+/* =============== 992px =============== */
+@media (max-width: 992px) {
+  .hero {
+    margin: 40px 30px 15px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .greeting {
+    margin: 40px 30px 15px;
+  }
+
+  .greeting h1 {
+    font-size: 38px;
+  }
+
+  .greeting p {
+    font-size: 18px;
+  }
+
+  .menu {
+    margin: 25px 25px;
+    justify-content: center;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    .table-card th:nth-child(1) { width: 30%; }
+  .table-card th:nth-child(2) { width: 16%; }
+  .table-card th:nth-child(3),
+  .table-card th:nth-child(4),
+  .table-card th:nth-child(5) { width: 10%; }
+  .table-card th:nth-child(6) { width: 12%; }
+  .table-card th:nth-child(7) { width: 12%; }
+
+  .reward-cell img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .btn-edit,
+  .btn-hapus {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+}
+
+/* =============== 768px =============== */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 25px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .greeting h1 {
+    font-size: 30px;
+  }
+
+  .greeting p {
+    font-size: 15px;
+  }
+
+  .menu {
+    gap: 12px;              /* lebih rapat */
+    margin: 20px 20px;       /* margin kecil */
+    justify-content: center;
+  }
+
+  .menu button {
+    padding: 4px 14px;      /* tombol lebih kecil */
+    font-size: 13px;        /* teks lebih kecil */
+    border-radius: 20px;    /* rounded mengecil */
+  }
+
+  /* Filter */
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .btn-add {
+    margin-top: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table-card {
+    margin: 20px 25px 40px;
+  }
+  .table-card {
+    overflow-x: auto;
+  }
+
+  .table-card table {
+    min-width: 850px;
+  }
+
+  .reward-cell img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .btn-edit,
+  .btn-hapus {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* =============== 600px =============== */
+@media (max-width: 600px) {
+  .stats {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+
+  .hero {
+    margin: 30px 20px 10px;
+  }
+
+  .greeting {
+    margin: 30px 20px 10px;
+  }
+
+  .greeting h1 {
+    font-size: 28px;
+  }
+
+  .menu button {
+    width: 100%;
+  }
+  .table-card th {
+    font-size: 14px;
+  }
+
+  .table-card td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .reward-cell img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .btn-edit,
+  .btn-hapus {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* =============== 480px =============== */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .stat img {
+    width: 26px;
+  }
+
+  .table-card {
+    padding: 18px;
+  }
+
+  .table-card table {
+    min-width: 750px;
+  }
+
+  .reward-cell img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .btn-edit,
+  .btn-hapus {
+    padding: 4px 9px;
+    font-size: 11.5px;
+  }
+}

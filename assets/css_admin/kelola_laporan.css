@@ -1,0 +1,421 @@
+/* --- GLOBAL STYLE --- */
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #032104;
+  overflow-x: hidden;
+}
+html,
+body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+.status-indicator {
+  width: 110px;
+  height: 35px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid;
+}
+
+/* ONLINE */
+.status-indicator.online {
+  background: #e1efe0;       /* hijau muda */
+  border-color: #16a34a;     /* hijau */
+  color: #16a34a;
+}
+
+/* OFFLINE */
+.status-indicator.offline {
+  background: #f3f3f3;       /* abu muda */
+  border-color: #9ca3af;     /* abu */
+  color: #6b7280;
+}
+
+.profile-icon img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- GREETING --- */
+.greeting {
+  margin: 20px 50px 20px;
+}
+
+.greeting h1 {
+  font-size: 35px;
+  font-weight: 500;
+  color: #000;
+}
+
+.greeting p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* --- MENU --- */
+.menu {
+  display: flex;
+  gap: 20px; /* dikurangi */
+  flex-wrap: wrap;
+  margin: 15px 50px; /* margin diperkecil */
+}
+
+.menu button {
+  background: #f4f4f4;
+  border: none;
+  border-radius: 25px; /* lebih kecil */
+  padding: 5px 20px; /* lebih ramping */
+  font-size: 15px; /* teks lebih kecil */
+  cursor: pointer;
+  color: #032104;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.menu button.active {
+  background: #e1efe0;
+  border: 1px solid #16a34a;
+  color: #032104;
+}
+
+.menu button:hover {
+  background: #e1efe0;
+  transform: translateY(-2px);
+}
+
+/* --- FILTER DROPDOWN --- */
+.filter-section {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 50px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.filter-btn {
+    background: #d5e5d2;
+    border: 1px solid #16a34a;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #c7ebc9;
+}
+
+.arrow {
+    width: 15px;
+    transition: transform 0.3s;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 55px; /* tepat di bawah tombol */
+    right: 0;
+    z-index: 999;
+    background: #e1efe0;
+    border: 1px solid #16a34a;
+    border-radius: 15px;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    color: #16a34a;
+    background: #e1efe0;
+    transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #c7ebc9;
+}
+
+#dropdown.open .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* CARD GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom tetap */
+  gap: 25px;
+  margin: 30px 40px 60px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card p {
+  font-size: 16px;
+  color: #032104;
+}
+
+.card h2 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #032104;
+}
+
+.card img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 65px;
+  right: 18px;
+}
+
+.orange {
+  color: #f97316;
+}
+
+.red {
+  color: #dc2626;
+}
+
+
+/* --- Judul Section --- */
+.actions {
+    margin: 40px 50px;
+}
+
+.actions h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* --- BOX BESAR --- */
+.action-box {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;              /* biar grid melebar penuh */
+    max-width: 800px;         /* batas maksimal biar rapi */
+    margin: 0 auto; 
+    position: relative;
+}
+
+/* --- CARD DI DALAM BOX --- */
+.quick-card {
+    background: #0000;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.25s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* --- ICON --- */
+.quick-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* --- TEXT --- */
+.quick-text h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b320a;
+}
+
+.quick-text p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablet besar */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .greeting {
+    margin: 40px 30px 15px;
+  }
+
+  .greeting h1 { font-size: 38px; }
+  .greeting p { font-size: 18px; }
+
+  .menu {
+    margin: 25px 25px;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Filter dropdown */
+  .filter-section {
+    width: auto;
+    padding: 0;
+  }
+
+  .filter-btn {
+    width: auto;
+    justify-content: flex-start;
+    padding: 10px 16px;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    top: 45px;
+    min-width: 160px;
+  }
+
+  .dropdown-item {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+/* Tablet kecil */
+@media (max-width: 768px) {
+  .navbar { padding: 15px 25px; }
+
+  .greeting h1 { font-size: 30px; }
+  .greeting p { font-size: 15px; }
+
+  .menu {
+    gap: 12px;
+    margin: 20px 20px;
+    justify-content: center;
+  }
+
+  .menu button {
+    padding: 4px 14px;
+    font-size: 13px;
+    border-radius: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HP */
+@media (max-width: 480px) {
+  .greeting {
+    margin: 30px 20px 10px;
+  }
+
+  .greeting h1 { font-size: 28px; }
+
+  .menu button { width: 100%; }
+
+  .stats-grid { grid-template-columns: 1fr; }
+
+  /* Filter dropdown */
+  .filter-section { width: auto; padding: 0; }
+
+  .filter-btn {
+    width: auto;
+    justify-content: flex-start;
+    padding: 10px 16px;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    top: 45px;
+    min-width: 150px;
+  }
+
+  .dropdown-item {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}

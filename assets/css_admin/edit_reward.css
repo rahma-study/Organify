@@ -1,0 +1,167 @@
+/* --------------------------------------------------
+   GLOBAL STYLE
+-------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  background: #E1EFE0;
+  color: #032104;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+/* --------------------------------------------------
+   TOP HEADER
+-------------------------------------------------- */
+.top-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-btn {
+  margin-right: 15px;
+  font-size: 22px;
+  color: #444;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: #adb1ae;
+}
+
+.top-header h2 {
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3c3b3b;
+  text-align: center;
+  flex: 1;
+}
+
+/* --------------------------------------------------
+   FORM WRAPPER
+-------------------------------------------------- */
+.form-container {
+  background: #E1EFE0;
+  padding: 35px 0 50px;
+  display: flex;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+
+/* --------------------------------------------------
+   INPUTS
+-------------------------------------------------- */
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccaca;
+  border-radius: 10px;
+  font-size: 12px;
+  background: #F9FAFB;
+  transition: 0.2s ease-in-out;
+}
+
+select {
+  color: #6B7280;
+}
+
+select option {
+  color: #000;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #1c9c4c;
+  box-shadow: 0 0 5px rgba(28,156,76,0.3);
+  outline: none;
+}
+
+/* --------------------------------------------------
+   PREVIEW GAMBAR
+-------------------------------------------------- */
+.preview-img {
+  width: 120px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+/* --------------------------------------------------
+   SUBMIT BUTTON
+-------------------------------------------------- */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #16A34A;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: 0.25s;
+}
+
+.submit-btn:hover {
+  background: #157d3f;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+@media (max-width: 768px) {
+  form {
+    width: 88%;
+    padding: 25px;
+  }
+
+  .preview-img {
+    width: 100px;
+  }
+}

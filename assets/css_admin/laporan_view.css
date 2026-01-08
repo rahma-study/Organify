@@ -1,0 +1,159 @@
+/* File: ../assets/css_admin/laporan_view.css */
+
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+/* ---------- Reset & Base Styles ---------- */
+body {
+    font-family: "Mitr", sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #111;
+}
+
+h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ---------- Header ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.small {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-download {
+    background-color: #e1efe0; /* hijau muda */
+    border: 1px solid #16a34a; /* hijau */
+    color: #16a34a;
+}
+
+.btn-download:hover {
+    background-color: #c7ebc9; /* hijau sedikit lebih gelap saat hover */
+    border-color: #16a34a;
+    color: #065f46; /* teks lebih gelap saat hover */
+}
+
+.btn-back {
+    background-color: #f87171; /* tetap merah untuk back */
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #ef4444;
+}
+
+/* ---------- Table ---------- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    font-size: 14px;
+}
+
+.table th {
+    background-color: #d4f0d6; /* hijau muda */
+    color: #111; /* hijau untuk teks header */
+    text-align: left;
+    font-weight: 500;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f0f9f1; /* hijau lembut untuk zebra */
+}
+
+.table tr:hover {
+    background-color: #dde1dd; /* hijau muda saat hover */
+} 
+
+/* ---------- Select Dropdown ---------- */
+select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #34d399; /* hijau fokus */
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .table th,
+    .table td {
+        font-size: 13px;
+        padding: 6px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 12px;
+        padding: 4px 3px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+}

@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+/* ----------------------------------------------------
+   GENERAL
+---------------------------------------------------- */
+body {
+  margin: 0;
+  font-family: "Mitr", sans-serif;
+  background: #f5f5f5;
+}
+
+/* ----------------------------------------------------
+   HEADER
+---------------------------------------------------- */
+.header {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+  height: 28px;
+  cursor: pointer;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* ===========================
+      HEADER BUTTONS
+=========================== */
+
+/* Tombol Back */
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-3px);
+  background: #555;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  transition: filter 0.2s ease;
+}
+
+.back-btn:hover img,
+.back-btn:active img {
+  filter: brightness(0) invert(1);
+}
+
+/* Tombol Logout */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fef2f2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+  background: #fcdcdc;
+}
+
+.logout-btn img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.logout-btn:hover img,
+.logout-btn:active img {
+  transform: scale(1.1);
+}
+
+
+
+/* ----------------------------------------------------
+   WRAPPER
+---------------------------------------------------- */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;   /* dari 1000px → 1200px */
+  margin: 20px auto 30px;
+  padding: 0 20px;
+}
+
+
+/* ----------------------------------------------------
+   TITLE
+---------------------------------------------------- */
+.title-section {
+  text-align: left;
+  margin: 0;
+  padding: 0; /* pastikan tidak ada padding */
+}
+
+.title-section h1 {
+  margin: 0;  /* nolkan semua margin */
+  padding: 0;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+
+/* ----------------------------------------------------
+   SAVE BUTTON
+---------------------------------------------------- */
+.save-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #058863;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.save-btn:hover {
+  background: #046d50;
+}
+
+/* ----------------------------------------------------
+   CARD
+---------------------------------------------------- */
+.card {
+  position: relative;
+  background: white;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.card-content {
+  display: flex;
+  margin-top: 25px;
+  gap: 40px;   /* dari 25px → 40px */
+  width: 100%;
+}
+
+
+/* ----------------------------------------------------
+   LEFT PROFILE
+---------------------------------------------------- */
+.left-profile {
+  width: 280px;
+  text-align: center;
+}
+
+.photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ddd;
+  margin: 0 auto 15px;
+}
+
+.left-profile h2 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.left-profile p {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  background: #d1f3e7;
+  color: #058863;
+  border-radius: 8px;
+}
+
+/* ----------------------------------------------------
+   FORM SECTION
+---------------------------------------------------- */
+.form-section {
+  flex: 1;
+}
+
+.form-row {
+  width: 100%;
+  margin-bottom: 18px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-row input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.struk-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.struk-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.struk-body .struk-item {
+    margin: 5px 0;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------- */
+@media (max-width: 900px) {
+  .card-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-profile {
+    width: 100%;
+  }
+
+  .form-section {
+    width: 100%;
+  }
+
+  .save-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .title-section h1 {
+    font-size: 20px;
+  }
+
+  .photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .form-row input {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
