@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+    --green-dark: #074B0A;
+    --green-main: #0F8A28;
+    --green-light: #1BBF44;
+    --card-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: mitr;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(rgba(0, 80, 0, 0.7), rgba(0, 80, 0, 0.8)), url('../img/welcome.jpg');
+    background-size: cover;
+    height: 150px;
+    background-position: center;
+    padding: 50px 20px 60px;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.back-btn {
+  position: absolute;     /* <— penting! supaya tidak ganggu h1 */
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.25);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(4px); /* biar elegan */
+}
+
+.back-btn:hover {
+  transform: translateX(-3px);
+  background: rgba(255,255,255,0.35);
+}
+
+.back-btn img {
+  filter: brightness(0) invert(1); 
+  width: 20px;
+  height: 20px;
+}
+
+
+.back-btn:focus {
+  outline: none; /* hilangkan garis fokus saat di-tab */
+}
+
+/* Hover / aktif */
+.back-btn:hover img,
+.back-btn:active img {
+  filter: brightness(0) invert(1); /* ubah ikon menjadi putih */
+}
+
+/* pastikan tidak ada pseudo-element panah tambahan */
+.back-btn::before,
+.back-btn::after {
+  content: none !important;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header p {
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+/* SUMMARY CARD */
+.summary-wrapper {
+    width: calc(100% - 80px);
+    margin: -40px auto 20px;
+    padding: 18px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 5;
+    margin-top: -90px;
+}
+
+.summary-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.summary .card {
+    text-align: center;
+    flex: 1;
+}
+
+.summary .card .num-total-poin {
+    font-size: 22px;
+    font-weight: 700;
+    color: #16A34A;
+}
+
+.summary .card .num-total-berat {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4F63EB;
+}
+
+.summary .card .num-total-aktivitas {
+    font-size: 22px;
+    font-weight: 700;
+    color: #EA580C;
+}
+
+.summary .card .label {
+    margin-top: 4px;
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+/* FILTER */
+.filter-box {
+    width: calc(100% - 80px);
+    margin: 20px auto;
+    padding: 18px;
+    background: #E1EFE0;
+    border-radius: 16px;
+}
+
+.filter-title {
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
+
+.filter-options a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.filter-options a.active {
+    font-weight: 500;
+    color: white;
+}
+
+
+.filter-options a:hover {
+    text-decoration: none;
+}
+
+.filter-item {
+    padding: 8px 25px;
+    background: white;
+    border-radius: 20px;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 2px 0; /* tambahan jarak biar lebih lega */
+}
+
+.filter-item.active,
+.filter-item:hover {
+    background: var(--green-dark) !important;
+    color: white !important;
+}
+
+/* ACTIVITIES */
+.activities-box {
+    width: calc(100% - 80px);
+    margin: 20px auto;
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.activities-box h3 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-left {
+    display: flex;
+    gap: 12px;
+}
+
+.activity-icon {
+    width: 45px;
+    height: 45px;
+    background: #d7f3d7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.activity-title {
+    font-weight: 500;
+}
+
+.activity-time {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.activity-point {
+    font-weight: 500;
+    color: #146c35;;
+}
+
+/* STATUS SETORAN */
+.status-menunggu {
+    color: #FFA500; /* oranye untuk menunggu */
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+.status-diverifikasi {
+    color: #0F8A28; /* hijau gelap sesuai tema */
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+.status-ditolak {
+    color: #F44336; /* merah untuk ditolak */
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+
+/* BOTTOM CARD */
+.pencapaian-card {
+    width: calc(100% - 80px);
+    margin: 30px auto;
+    padding: 18px;
+    border-radius: 24px;
+    color: white;
+    background: linear-gradient(to right, #1c8f4a, #0a3d1e);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}
+
+.bottom-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bottom-subtext {
+    opacity: 0.8;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.bottom-content .bottom-card {
+    text-align: center;
+    flex: 1;
+}
+
+.bottom-card .label-pencapaian {
+    margin-top: 4px;
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.bottom-card .num-total-berat,
+.bottom-card .num-total-poin {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.bottom-content-arrow img {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    align-self: center;
+}
+
+/* =========================================
+   RESPONSIVE (Mobile & Tablet)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        height: 140px;
+        padding: 40px 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    /* SUMMARY WRAPPER */
+    .summary-wrapper {
+        width: calc(100% - 40px);
+        margin-top: -70px;
+        padding: 15px;
+    }
+
+    .summary {
+        flex-direction: row;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .summary .card .num-total-poin,
+    .summary .card .num-total-berat,
+    .summary .card .num-total-aktivitas {
+        font-size: 18px;
+    }
+
+    /* FILTER */
+    .filter-box {
+        width: calc(100% - 40px);
+        padding: 15px;
+    }
+
+    .filter-options {
+        gap: 12px;
+        margin-left: 0;
+    }
+
+    .filter-item {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    /* ACTIVITIES */
+    .activities-box {
+        width: calc(100% - 40px);
+        padding: 15px;
+    }
+
+    .activity-item {
+        padding: 12px 0;
+    }
+
+    .activity-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .activity-icon img {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* BOTTOM CARD */
+    .pencapaian-card {
+        width: calc(100% - 40px);
+        padding: 16px;
+    }
+
+    .bottom-content {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .bottom-card .num-total-poin,
+    .bottom-card .num-total-berat {
+        font-size: 18px;
+    }
+}
+
+/* HP KECIL <= 480px */
+@media (max-width: 480px) {
+
+    .header {
+        height: 130px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .summary-wrapper {
+        width: calc(100% - 30px);
+    }
+
+    .summary {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .filter-box {
+        width: calc(100% - 30px);
+    }
+
+    .filter-options {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .activities-box {
+        width: calc(100% - 30px);
+    }
+
+    .pencapaian-card {
+        width: calc(100% - 30px);
+    }
+}
